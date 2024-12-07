@@ -14,6 +14,9 @@ class QueryResponse(BaseModel):
     query: str
     answer: str
 
+with open('agent.log', 'w') as f:
+    pass
+
 @app.route('/query', methods=['POST'])
 def create_query():
     try:

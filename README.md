@@ -1,6 +1,10 @@
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/b26b3b4641a44c8dbc01cc3f243c4dee?sid=3fc726ec-c997-43c9-b11d-4c1101d1c3eb" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 # AK15 (Agentic Kubernetes 15)
 
 AK15 is a Kubernetes agent that uses a human-like approach to query the Kubernetes API. **15** is the number of functions it has access to.
+
+> **Note:** I forgot to mention this in the video, the function choosing, arguments, and setting deep=true are all done by the LLM itself.
 
 ## Motivation & Approach
 

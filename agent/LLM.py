@@ -257,7 +257,6 @@ class LLM():
                         tool_call.function.name,
                         function_args
                     )
-                    logger.critical(f"[FUNCTION CALL] Response: {function_response}")
                     
                     # Append the response to messages
                     self.messages.append({
