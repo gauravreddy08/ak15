@@ -1,6 +1,7 @@
 main_v2.py
 
-*.txt
+results*.txt
+queries.txt
 *.ipynb
 
 # General
