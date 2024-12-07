@@ -1,0 +1,453 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "list_configmap_names",
+            "description": "Lists all ConfigMaps in a specified Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace to list ConfigMaps from. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_configmap_details",
+            "description": "Retrieves information about a specific ConfigMap in a Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "configmap_name": {
+                        "type": "string",
+                        "description": "The complete name of the ConfigMap to retrieve details for. Must match exactly as shown in Kubernetes."
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace where the ConfigMap is located. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    },
+                    "deep": {
+                        "type": "boolean",
+                        "description": "When true, returns full detailed information about the ConfigMap.",
+                        "default": false
+                    }
+                },
+                "required": ["configmap_name"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_secret_names",
+            "description": "Lists all Secrets in a specified Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace to list Secrets from. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_secret_details",
+            "description": "Retrieves information about a specific Secret in a Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "secret_name": {
+                        "type": "string",
+                        "description": "The complete name of the Secret to retrieve details for. Must match exactly as shown in Kubernetes."
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace where the Secret is located. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    },
+                    "deep": {
+                        "type": "boolean",
+                        "description": "When true, returns full detailed information about the Secret.",
+                        "default": false
+                    }
+                },
+                "required": ["secret_name"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_deployments",
+            "description": "Lists all Deployments in a specified Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace to list Deployments from. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_deployment_details",
+            "description": "Retrieves information about a specific Deployment in a Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "deployment_name": {
+                        "type": "string",
+                        "description": "The complete name of the Deployment to retrieve details for. Must match exactly as shown in Kubernetes."
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace where the Deployment is located. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    },
+                    "deep": {
+                        "type": "boolean",
+                        "description": "When true, returns full detailed information about the Deployment.",
+                        "default": false
+                    }
+                },
+                "required": ["deployment_name"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_all_namespaces",
+            "description": "Lists all namespaces in the Kubernetes cluster.",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_namespace_details",
+            "description": "Retrieves information about a specific Namespace in the Kubernetes cluster.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "description": "The name of the Namespace to retrieve details for. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    },
+                    "deep": {
+                        "type": "boolean",
+                        "description": "When true, returns full detailed information about the Namespace.",
+                        "default": false
+                    }
+                },
+                "required": ["namespace"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_cluster_version_info",
+            "description": "Retrieves the Kubernetes cluster version details.",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_all_nodes",
+            "description": "Lists all Kubernetes nodes in the cluster.",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_node_info",
+            "description": "Retrieves information about a specific Kubernetes node.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "node_name": {
+                        "type": "string",
+                        "description": "The complete name of the node to retrieve details for. Must match exactly as shown in Kubernetes."
+                    },
+                    "deep": {
+                        "type": "boolean",
+                        "description": "When true, returns full detailed information about the node.",
+                        "default": false
+                    }
+                },
+                "required": ["node_name"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_pods_in_namespace",
+            "description": "Lists all Pods in the specified Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace to list Pods from. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_pod_details",
+            "description": "Retrieves information about a specific Pod in a Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pod_name": {
+                        "type": "string",
+                        "description": "The complete name of the Pod to retrieve details for. Must match exactly as shown in Kubernetes."
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace where the Pod is located. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    },
+                    "deep": {
+                        "type": "boolean",
+                        "description": "When true, returns full detailed information about the Pod, including events and logs.",
+                        "default": false
+                    }
+                },
+                "required": ["pod_name"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_daemonset_names",
+            "description": "Lists all DaemonSets in the specified Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace to list DaemonSets from. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_daemonset_details",
+            "description": "Retrieves information about a specific DaemonSet in a Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "daemonset_name": {
+                        "type": "string",
+                        "description": "The complete name of the DaemonSet to retrieve details for. Must match exactly as shown in Kubernetes."
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace where the DaemonSet is located. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    },
+                    "deep": {
+                        "type": "boolean",
+                        "description": "When true, returns full detailed information about the DaemonSet.",
+                        "default": false
+                    }
+                },
+                "required": ["daemonset_name"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_statefulset_names",
+            "description": "Lists all StatefulSets in the specified Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace to list StatefulSets from. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_statefulset_details",
+            "description": "Retrieves information about a specific StatefulSet in a Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "statefulset_name": {
+                        "type": "string",
+                        "description": "The complete name of the StatefulSet to retrieve details for. Must match exactly as shown in Kubernetes."
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace where the StatefulSet is located. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    },
+                    "deep": {
+                        "type": "boolean",
+                        "description": "When true, returns full detailed information about the StatefulSet.",
+                        "default": false
+                    }
+                },
+                "required": ["statefulset_name"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_replicaset_names",
+            "description": "Lists all ReplicaSets in the specified Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace to list ReplicaSets from. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_replicaset_details",
+            "description": "Retrieves information about a specific ReplicaSet in a Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "replicaset_name": {
+                        "type": "string",
+                        "description": "The complete name of the ReplicaSet to retrieve details for. Must match exactly as shown in Kubernetes."
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace where the ReplicaSet is located. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    },
+                    "deep": {
+                        "type": "boolean",
+                        "description": "When true, returns full detailed information about the ReplicaSet.",
+                        "default": false
+                    }
+                },
+                "required": ["replicaset_name"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_service_names",
+            "description": "Lists all Services in the specified Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace to list Services from. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_service_details",
+            "description": "Retrieves information about a specific Service in a Kubernetes namespace.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "service_name": {
+                        "type": "string",
+                        "description": "The complete name of the Service to retrieve details for. Must match exactly as shown in Kubernetes."
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "The Kubernetes namespace where the Service is located. Defaults to 'default' namespace if not specified.",
+                        "default": "default"
+                    },
+                    "deep": {
+                        "type": "boolean",
+                        "description": "When true, returns full detailed information about the Service.",
+                        "default": false
+                    }
+                },
+                "required": ["service_name"],
+                "additionalProperties": false
+            }
+        }
+    }
+]
