@@ -2,10 +2,10 @@ from src.utils import setup_logger
 import logging
 from flask import Flask, request, jsonify
 from pydantic import BaseModel, ValidationError
-from agent.LLM import LLM
+# from agent.LLM import LLM
 
 app = Flask(__name__)
-agent = LLM('gpt-4o')
+# agent = LLM('gpt-4o')
 
 setup_logger()
 logger = logging.getLogger(__name__)
@@ -23,8 +23,7 @@ def create_query():
         query = request_data.get('query')
 
         # answer = agent.call(query)
-        answer = "This is a test answer"
-        
+        answer = "Not implemented"
         # Create the response model
         response = QueryResponse(query=query, answer=answer)
         
