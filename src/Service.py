@@ -5,14 +5,10 @@ Handles operations for Services, providing formatted information retrieval.
 
 import json
 import logging
-from kubernetes import client, config
-from src.utils import setup_logger
+from src.utils import load_kube_config
 
-setup_logger()  
+v1, apps_v1, version_api = load_kube_config()
 logger = logging.getLogger(__name__)
-
-config.load_kube_config()
-v1 = client.CoreV1Api()
 
 def list_service_names(namespace: str = 'default') -> str:
     """Lists all Services in the specified namespace."""

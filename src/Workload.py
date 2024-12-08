@@ -3,17 +3,12 @@ Kubernetes Workload Module
 Handles operations for DaemonSets, StatefulSets, and ReplicaSets.
 """
 
-from kubernetes import client, config
-import logging
 import json
-from src.utils import setup_logger
+import logging
+from src.utils import load_kube_config
 
-setup_logger()  
+v1, apps_v1, version_api = load_kube_config()
 logger = logging.getLogger(__name__)
-
-config.load_kube_config()
-v1 = client.CoreV1Api()
-apps_v1 = client.AppsV1Api()
 
 def list_daemonset_names(namespace: str = 'default') -> str:
     """Lists all DaemonSets in the specified namespace."""

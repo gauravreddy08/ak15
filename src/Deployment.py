@@ -5,13 +5,9 @@ Handles operations for Deployments, providing formatted information retrieval.
 
 import json
 import logging
-from kubernetes import client, config
-from src.utils import setup_logger
-config.load_kube_config()
-v1 = client.CoreV1Api()
-apps_v1 = client.AppsV1Api()
+from src.utils import load_kube_config
 
-setup_logger()
+v1, apps_v1, version_api = load_kube_config()
 logger = logging.getLogger(__name__)
 
 def list_deployments(namespace: str = 'default') -> str:

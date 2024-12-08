@@ -3,12 +3,11 @@ Kubernetes Pod Module
 Handles operations for Pods, providing formatted information retrieval.
 """
 
-from kubernetes import client, config
 import json
 import logging
-from src.utils import setup_logger, load_kube_config
+from src.utils import load_kube_config
 
-setup_logger()  
+v1, apps_v1, version_api = load_kube_config()
 logger = logging.getLogger(__name__)
 
 def list_pods_in_namespace(namespace: str = 'default') -> str:
@@ -59,7 +58,7 @@ def get_pod_details(pod_name: str, namespace: str = 'default', deep: bool = Fals
         for c in pod.spec.containers:
             try:
                 log = v1.read_namespaced_pod_log(name=pod_name, namespace=namespace, container=c.name)
-            except client.ApiException:
+            except Exception as e:
                 log = "No logs available or unable to retrieve logs."
             container_logs[c.name] = log
 

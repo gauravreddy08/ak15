@@ -5,14 +5,10 @@ Handles operations for ConfigMaps and Secrets, providing formatted information r
 
 import json
 import logging
-from kubernetes import client, config
-from src.utils import setup_logger
+from src.utils import load_kube_config
 
-setup_logger()  
+v1, apps_v1, version_api = load_kube_config()
 logger = logging.getLogger(__name__)
-
-config.load_kube_config()
-v1 = client.CoreV1Api()
 
 def list_configmap_names(namespace: str = 'default') -> str:
     """Lists all ConfigMaps in the specified namespace."""

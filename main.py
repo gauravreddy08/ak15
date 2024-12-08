@@ -9,13 +9,11 @@ agent = LLM('gpt-4o')
 
 setup_logger()
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.CRITICAL)
 
 class QueryResponse(BaseModel):
     query: str
     answer: str
-
-with open('agent.log', 'w') as f:
-    pass
 
 @app.route('/query', methods=['POST'])
 def create_query():

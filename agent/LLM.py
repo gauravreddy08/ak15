@@ -5,6 +5,7 @@ import logging
 from src.utils import setup_logger
 from agent import prompt as system_prompt
 from typing import Dict, Any
+import os
 
 setup_logger()
 logger = logging.getLogger(__name__)
@@ -44,8 +45,10 @@ class LLM():
         self.model_name = model_name
         self.temperature = temperature
         self.messages = []
+
+        tools_path = os.path.join(os.path.dirname(__file__), 'tools.json')
         
-        with open('agent/tools.json', 'r') as f:
+        with open(tools_path, 'r') as f:
             self.tools = json.load(f)
 
     def call(self, prompt=None, tool_choice='auto'):

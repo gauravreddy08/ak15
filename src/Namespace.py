@@ -3,16 +3,12 @@ Kubernetes Namespace Module
 Handles operations for Namespaces, providing formatted information retrieval.
 """
 
-from kubernetes import client, config
 import json
 import logging
-from src.utils import setup_logger 
+from src.utils import load_kube_config
 
-setup_logger()  
+v1, apps_v1, version_api = load_kube_config()
 logger = logging.getLogger(__name__)
-
-config.load_kube_config()
-v1 = client.CoreV1Api()
 
 def list_all_namespaces() -> str:
     """Lists all namespaces in the cluster."""

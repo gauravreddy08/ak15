@@ -3,15 +3,12 @@ Kubernetes Node Operations Module
 Provides functions to retrieve and format information about Kubernetes nodes and cluster version.
 """
 
-from kubernetes import client, config
 import json
 import logging
-from src.utils import setup_logger, load_kube_config
-
-setup_logger()
-logger = logging.getLogger(__name__)
+from src.utils import load_kube_config
 
 v1, apps_v1, version_api = load_kube_config()
+logger = logging.getLogger(__name__)
 
 def get_cluster_version_info() -> str:
     """Gets and formats Kubernetes cluster version details."""
