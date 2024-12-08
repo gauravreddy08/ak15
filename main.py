@@ -22,7 +22,8 @@ def create_query():
         request_data = request.json
         query = request_data.get('query')
 
-        answer = agent.call(query)
+        # answer = agent.call(query)
+        answer = "This is a test answer"
         
         # Create the response model
         response = QueryResponse(query=query, answer=answer)
