@@ -249,8 +249,8 @@ class LLM():
         for tool_call in tool_calls:
             if tool_call.function.name:
                 try:
-                    logger.critical(f"[FUNCTION CALL] Executing tool: {tool_call.function.name}")
-                    logger.critical(f"[FUNCTION CALL] Arguments: {tool_call.function.arguments}")
+                    logger.critical(f"[FUNCTION CALL] Executing tool: {tool_call.function.name} ({tool_call.function.arguments})")
+                    # logger.critical(f"[FUNCTION CALL] Arguments: {tool_call.function.arguments}")
                 
                     # Parse the function arguments
                     function_args = json.loads(tool_call.function.arguments)
@@ -268,6 +268,7 @@ class LLM():
                         "name": tool_call.function.name,
                         "content": function_response,
                     })
+                    logger.critical(f"[RESPONSE] {function_response}")
 
                 except Exception as e:
                     # Handle any errors during function execution
