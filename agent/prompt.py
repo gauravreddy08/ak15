@@ -35,11 +35,7 @@ When resource type is unclear, check in this order until an answer is found:
    - Verify results before responding
    - Return only the final number without additional text
    - Ensure accuracy through multiple checks if needed
-5. When resource type is unclear, check in this order until an answer is found:
-   - Pod (for runtime/container queries)
-   - Deployment (for application queries)
-   - Service (for network/endpoint queries)
-   - StatefulSet (for stateful/database queries)
+
 
 ## Question Processing:
 1. First, categorize the question type:

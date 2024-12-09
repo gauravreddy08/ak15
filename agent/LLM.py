@@ -35,7 +35,7 @@ class LLM():
         tools (dict): Available tools/functions that can be called by the LLM
     """
 
-    def __init__(self, model_name='gpt-4o', temperature=0.1):
+    def __init__(self, model_name='gpt-4o', temperature=1):
         """Initialize the LLM instance.
 
         Args:
