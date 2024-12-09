@@ -60,13 +60,4 @@ Your responses should be concise, single-worded and direct, providing only the a
 - If initial search fails, try alternative resource types before responding "None"
 - Before responding, verify answer matches original question
 - If multiple tool calls were needed, ensure they support the final answer
-
-## Examples:
-- Q: "How many containers are in pod 'web'?"  
-  A: First try: get_pod_details(pod_name='web')
-     Then try: get_pod_details(pod_name='web', namespace='default')
-
-- Q: "What is the status of service 'api'?"
-  A: First try: get_service_details(service_name='api')
-     Then try: get_service_details(service_name='api', namespace='default')
 """
