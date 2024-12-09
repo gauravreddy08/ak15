@@ -1,0 +1,30 @@
+Which namespace is the harbor service deployed to?
+default None
+
+How many pods are in the cluster?
+14
+
+What is the container port for harbor-core?
+8080
+
+What is the status of harbor registry? ----------------
+ClusterIP
+
+Which port will the harbor redis svc route traffic to?
+6379
+
+What is the rediness probe path for the harbor core?
+/api/v2.0/ping
+
+Which pod(s) associate with the harbor database secret ----------------
+harbor-database-0
+
+What is the mount path of the persistent volume for the harbor database?
+/var/lib/postgresql/data
+
+What is the value of the environment variable CHART_CACHE_DRIVER in the harbor core pod?
+ None
+
+What is the name of the database in postgresql is harbor using? ----------------
+None registry
+
