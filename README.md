@@ -1,11 +1,7 @@
-<div>
-    <a href="https://www.loom.com/share/b26b3b4641a44c8dbc01cc3f243c4dee">
-      <p>Developing an Agentic Kubernetes Assistant - Watch Video</p>
-    </a>
-    <a href="https://www.loom.com/share/b26b3b4641a44c8dbc01cc3f243c4dee">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/b26b3b4641a44c8dbc01cc3f243c4dee-fb0db8283b9d267d-full-play.gif">
-    </a>
-  </div>
+
+<a href="https://www.youtube.com/watch?v=hDRGco-DFpA">![Copy of Introducing (YouTube Thumbnail)](https://github.com/user-attachments/assets/79554463-3968-4164-b75e-770331a02852)</a>
+
+> ##### [Youtube Video](https://www.youtube.com/watch?v=hDRGco-DFpA)
 
 # AK15 (Agentic Kubernetes 15)
 
